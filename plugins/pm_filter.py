@@ -441,7 +441,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝖡𝖺𝗇', callback_data='ban')
             ],[
             InlineKeyboardButton('Connection', callback_data='coct')
-            InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute')
+            InlineKeyboardButton('Filters', callback_data='hud')
             ],[
             InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
             InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info'),
