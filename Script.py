@@ -83,7 +83,7 @@ BAN_TXT = """<b>𝖡𝖺𝗇𝗌:</b>
 - 𝖡𝖺𝗇 𝖺 𝗎𝗌𝖾𝗋 𝖿𝗈𝗋 𝗍𝗐𝗈 𝗁𝗈𝗎𝗋𝗌. 
 -> /tban @𝗎𝗌𝖾𝗋𝗇𝖺𝗆𝖾 𝟤𝗁
 """
-    EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
+EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
 these are the extra features of Eva Maria
