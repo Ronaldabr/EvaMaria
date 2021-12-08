@@ -437,7 +437,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
             ],[
             InlineKeyboardButton('Song', callback_data='song'),
-            InlineKeyboardButton('Fun', callback_data='fun')
+            InlineKeyboardButton('Fun', callback_data='fun'),
+            InlineKeyboardButton('𝖡𝖺𝗇', callback_data='ban')
             ],[
             InlineKeyboardButton('Connection', callback_data='coct'),
             InlineKeyboardButton('Extra Mods', callback_data='extra')
@@ -509,6 +510,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.FUN_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "ban":
+        buttons = [[
+            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.BAN_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
