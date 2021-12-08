@@ -440,15 +440,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Fun', callback_data='fun'),
             InlineKeyboardButton('𝖡𝖺𝗇', callback_data='ban')
             ],[
-            InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra'),
+            InlineKeyboardButton('Connection', callback_data='coct')
             InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute')
             ],[
             InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
-            InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info')
+            InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info'),
+            InlineKeyboardButton('Stats', callback_data='stats')
             ],[
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔮 Status', callback_data='stats')
+            InlineKeyboardButton('🏠 Home', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
