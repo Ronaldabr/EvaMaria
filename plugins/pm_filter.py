@@ -444,6 +444,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Extra Mods', callback_data='extra'),
             InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute')
             ],[
+            InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
+            InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info')
+            ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔮 Status', callback_data='stats')
         ]]
@@ -582,6 +585,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.MUTE_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )      
+    elif query.data == "info":
+        buttons = [[
+            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.INFO_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "imbd":
+        buttons = [[
+            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.IMBD_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
