@@ -412,18 +412,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption
             )
-
-    elif query.data == "pages":
+   elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url='http://t.me/dqautofl_bot?startgroup=true')
+            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/EDIT_REPO')
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 Deploy Now', url='https://youtu.be/fyFKnde_Jz8')
             ],[
-            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -436,18 +435,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('Song', callback_data='song'),
-            InlineKeyboardButton('Fun', callback_data='fun'),
-            InlineKeyboardButton('𝖡𝖺𝗇', callback_data='ban')
-            ],[
             InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute')
+            InlineKeyboardButton('Extra Mods', callback_data='extra')
             ],[
-            InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
-            InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info'),
-            InlineKeyboardButton('Stats', callback_data='stats')
-            ],[
-            InlineKeyboardButton('Home', callback_data='start')
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('🔮 Status', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -457,13 +449,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('Status', callback_data='stats'),
-            InlineKeyboardButton('Source', url='https://t.me/movies_club_2022')
+            InlineKeyboardButton('🤖 Deploy Now', url='https://youtu.be/fyFKnde_Jz8'),
+            InlineKeyboardButton('♥️ Source', callback_data='source')
             ],[
-            InlineKeyboardButton('Search Movies', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('« Back', callback_data='start'),
-            InlineKeyboardButton('Close ✗', callback_data='close_data')
+            InlineKeyboardButton('🏠 Home', callback_data='start'),
+            InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -481,48 +471,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "hud":
+    elif query.data == "manuelfilter":
         buttons = [[
-            InlineKeyboardButton('𝖠𝗎𝗍𝗈', callback_data='autofilter'),
-            InlineKeyboardButton('𝖬𝖺𝗇𝗎𝖺𝗅', callback_data='manual')
-            ],[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help'),
-            InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.FILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "manual":
-        buttons = [[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='hud'),
-            InlineKeyboardButton('𝖡𝗎𝗍𝗍𝗈𝗇', callback_data='button')
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+            InlineKeyboardButton('⏹️ Buttons', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "fun":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.FUN_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "ban":
-        buttons = [[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.BAN_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -569,51 +525,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "admin":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ADMIN_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "mute":
-        buttons = [[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.MUTE_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )      
-    elif query.data == "info":
-        buttons = [[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.INFO_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "imbd":
-        buttons = [[
-            InlineKeyboardButton('𝖡𝖺𝖼𝗄', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.IMBD_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "song":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.SONG_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -653,8 +569,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
             parse_mode='html'
-       )
-   
+      )
+    
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
@@ -677,7 +593,8 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                ),
+    
+    ),
             ]
             for file in files
         ]
@@ -709,7 +626,9 @@ async def auto_filter(client, msg, spoll=False):
         )
     imdb = await get_poster(search) if IMDB else None
     if imdb:
-        cap = f"🎬Requested Movie: {search}\nIMDb Data:\n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a>/10</code>"
+        cap = f"➡️Requested Movie : {search}\n👤Requested By {msg.from_user.mention}\n‌‌‌‌\nIMDb Data:\n\n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>"
+    else:
+        cap = "Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -724,8 +643,8 @@ async def auto_filter(client, msg, spoll=False):
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
+        
 
-       
 async def advantage_spell_chok(msg):
     query = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|send|snd|movie(s)?|new|latest|br((o|u)h?)*|^h(e)?(l)*(o)*|mal(ayalam)?|tamil|file|that|give|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle)", "", msg.text) # plis contribute some common words 
     query = query.strip()
@@ -757,6 +676,5 @@ async def advantage_spell_chok(msg):
                 )
             ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data='close_data')])
-    m = await msg.reply(f"𝙋𝙡𝙚𝙖𝙨𝙚 𝙋𝙧𝙤𝙫𝙞𝙙𝙚 𝙏𝙝𝙚 𝘾𝙤𝙧𝙧𝙚𝙘𝙩 𝙈𝙤𝙫𝙞𝙚 𝙉𝙖𝙢𝙚..🥱\n\n⭕ᴅᴏɴᴛ ᴀꜱᴋ ᴛʜᴇᴀᴛʀᴇ ᴩʀɪɴᴛꜱ\n⭕ʀᴇqᴜᴇꜱᴛ ʀᴇʟᴇᴀꜱᴇᴅ ᴍᴏᴠɪᴇꜱ ᴏɴʟy\n⭕ꜱᴇᴀʀᴄʜ ɢᴏᴏɢʟᴇ ꜰᴏʀ ᴄᴏʀʀᴇᴄᴛ ꜱᴩᴇʟʟɪɴɢ🔍")
-    await asyncio.sleep(6)
-    await m.delete()
+    await msg.reply(f'👋Hey {msg.from_user.mention}\nI cant find anything related to that\nDid you mean any one of these?', reply_markup=InlineKeyboardMarkup(btn))
+        
