@@ -417,13 +417,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('Add me to Your Group', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/movies_club_2022')
+            InlineKeyboardButton('Search Movies', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('Support', url='https://t.me/movies_club_2022')
             ],[
-            InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('Help', callback_data='help'),
+            InlineKeyboardButton('About', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -441,8 +441,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝖡𝖺𝗇', callback_data='ban')
             ],[
             InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute'),
-            InlineKeyboardButton('ADMIN', callback_data='extra')
+            InlineKeyboardButton('𝖬𝗎𝗍𝖾', callback_data='mute')
             ],[
             InlineKeyboardButton('𝖨𝗆𝖽𝖻', callback_data='imbd'),
             InlineKeyboardButton('𝖨𝗇𝖿𝗈', callback_data='info'),
